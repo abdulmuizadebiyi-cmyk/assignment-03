@@ -23,7 +23,7 @@ students organize assignments, manage deadlines and track progress.
 - EJS
 - CSS
 - GitHub
-- Render (planned hosting)
+- Render 
 
 ## Running the Project
 
@@ -39,7 +39,7 @@ students organize assignments, manage deadlines and track progress.
 
 ## Live Website
 
-Link will be added after deployment.
+https://assignment-03-5078.onrender.com
 
 ## Code Attribution
 
