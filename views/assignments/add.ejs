@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Assignment</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+    <h1>Add Assignment</h1>
+
+    <form action="/assignments/add" method="POST">
+
+        <label for="title">Assignment Title</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="course">Course Name</label>
+        <input type="text" id="course" name="course" required>
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description"></textarea>
+
+        <label for="dueDate">Due Date</label>
+        <input type="date" id="dueDate" name="dueDate" required>
+
+        <label for="priority">Priority</label>
+        <select id="priority" name="priority" required>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+
+        <label for="status">Status</label>
+        <select id="status" name="status" required>
+            <option value="Not Started">Not Started</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+        </select>
+
+        <button type="submit">Add Assignment</button>
+        <a href="/assignments">Cancel</a>
+
+    </form>
+<%- include('../partials/footer') %>
+</body>
+</html>

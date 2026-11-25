@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Assignments</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+
+    <%- include('../partials/header') %>
+
+    <main class="container">
+
+        <h1>My Assignments</h1>
+
+        <p>Manage and track your upcoming assignments.</p>
+
+        <a href="/assignments/add" class="btn">
+            Add Assignment
+        </a>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Course</th>
+                    <th>Description</th>
+                    <th>Due Date</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <% assignments.forEach(function(assignment) { %>
+
+                    <tr>
+                        <td><%= assignment.title %></td>
+
+                        <td><%= assignment.course %></td>
+
+                        <td><%= assignment.description %></td>
+
+                        <td>
+                            <%= assignment.dueDate.toISOString().split('T')[0] %>
+                        </td>
+
+                        <td><%= assignment.priority %></td>
+
+                        <td><%= assignment.status %></td>
+
+                        <td>
+                            <a class="btn" href="/assignments/edit/<%= assignment._id %>">
+                                Edit
+                            </a>
+
+                            <form action="/assignments/delete/<%= assignment._id %>" method="POST">
+
+                                <button type="submit" onclick="return confirm('Delete this assignment?')">
+                                    Delete
+                                </button>
+
+                            </form>
+                        </td>
+                    </tr>
+
+                <% }); %>
+
+            </tbody>
+        </table>
+
+        <% if (assignments.length === 0) { %>
+
+            <p>No assignments available. Add your first assignment.</p>
+
+        <% } %>
+
+    </main>
+
+    <%- include('../partials/footer') %>
+
+</body>
+</html>

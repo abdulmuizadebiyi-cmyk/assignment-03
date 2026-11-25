@@ -1,11 +1,64 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Assignment Tracker</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+
+    <%- include('partials/header') %>
+
+    <main class="container">
+
+        <section class="hero">
+            <h1>Student Assignment Tracker</h1>
+
+            <p>
+                Organize your assignments, manage deadlines,
+                and track your academic progress in one place.
+            </p>
+
+            <a href="/assignments" class="btn">
+                View Assignments
+            </a>
+
+            <a href="/assignments/add" class="btn">
+                Add Assignment
+            </a>
+        </section>
+
+        <section class="features">
+
+            <div class="card">
+                <h2>Manage Assignments</h2>
+                <p>
+                    Create, view, update, and delete assignments.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>Track Deadlines</h2>
+                <p>
+                    Keep track of upcoming assignment due dates.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>Monitor Progress</h2>
+                <p>
+                    Set priorities and track assignment completion.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <%- include('partials/footer') %>
+
+</body>
 </html>
+
